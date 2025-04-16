@@ -4,10 +4,9 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/png" href="/static/favicon.png" />
 		<link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
 		<link rel="shortcut icon" href="/static/favicon.ico" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
-		<meta name="apple-mobile-web-app-title" content="Open WebUI" />
+		<meta name="apple-mobile-web-app-title" content="Defendable AI" />
 
 		<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
 		<meta
@@ -16,11 +15,11 @@
 		/>
 		<meta name="theme-color" content="#171717" />
 		<meta name="robots" content="noindex,nofollow" />
-		<meta name="description" content="Open WebUI" />
+		<meta name="description" content="Defendable AI" />
 		<link
 			rel="search"
 			type="application/opensearchdescription+xml"
-			title="Open WebUI"
+			title="Defendable AI"
 			href="/opensearch.xml"
 		/>
 		<script src="/static/loader.js" defer></script>
@@ -43,7 +42,7 @@
 
 				if (localStorage.theme === 'system') {
 					document.documentElement.classList.add(prefersDarkTheme ? 'dark' : 'light');
-					metaThemeColorTag.setAttribute('content', prefersDarkTheme ? '#171717' : '#ffffff');
+					metaThemeColorTag.setAttribute('content', prefersDarkTheme ? '#171717' : '#E31C79');
 				} else if (localStorage.theme === 'oled-dark') {
 					document.documentElement.style.setProperty('--color-gray-800', '#101010');
 					document.documentElement.style.setProperty('--color-gray-850', '#050505');
@@ -53,7 +52,7 @@
 					metaThemeColorTag.setAttribute('content', '#000000');
 				} else if (localStorage.theme === 'light') {
 					document.documentElement.classList.add('light');
-					metaThemeColorTag.setAttribute('content', '#ffffff');
+					metaThemeColorTag.setAttribute('content', '#E31C79');
 				} else if (localStorage.theme === 'her') {
 					document.documentElement.classList.add('dark');
 					document.documentElement.classList.add('her');
@@ -101,7 +100,7 @@
 			})();
 		</script>
 
-		<title>Open WebUI</title>
+		<title>Defendable AI</title>
 
 		%sveltekit.head%
 	</head>
@@ -193,15 +192,15 @@
 	}
 
 	#splash-screen {
-		background: #fff;
+		background: #003232;
 	}
 
 	html.dark #splash-screen {
-		background: #000;
+		background: #003232;
 	}
 
 	html.her #splash-screen {
-		background: #983724;
+		background: #003232;
 	}
 
 	#logo-her {
@@ -251,5 +250,15 @@
 
 	.animate-pulse-fast {
 		animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+
+	html.dark #sidebar{
+		background: var(--color-gray-950, #0d0d0d);
+    background: linear-gradient(-70deg, var(--color-gray-950, #0d0d0d) 0%, rgba(0, 50, 50, 1) 100%);
+	}
+
+	html.light #sidebar {
+		background: var(--color-gray-50, #f9f9f9);
+		background: linear-gradient(-70deg, var(--color-gray-50, #f9f9f9) 0, rgba(0, 50, 50, 0.2) 100%);
 	}
 </style>
